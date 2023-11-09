@@ -1,0 +1,15 @@
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/bin/Debug/net7.0/MeuPrimeiroProjeto
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/bin/Debug/net7.0/MeuPrimeiroProjeto.deps.json
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/bin/Debug/net7.0/MeuPrimeiroProjeto.runtimeconfig.json
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/bin/Debug/net7.0/MeuPrimeiroProjeto.dll
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/bin/Debug/net7.0/MeuPrimeiroProjeto.pdb
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/Debug/net7.0/MeuPrimeiroProjeto.csproj.AssemblyReference.cache
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/Debug/net7.0/MeuPrimeiroProjeto.GeneratedMSBuildEditorConfig.editorconfig
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/Debug/net7.0/MeuPrimeiroProjeto.AssemblyInfoInputs.cache
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/Debug/net7.0/MeuPrimeiroProjeto.AssemblyInfo.cs
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/Debug/net7.0/MeuPrimeiroProjeto.csproj.CoreCompileInputs.cache
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/Debug/net7.0/MeuPrimeiroProjeto.dll
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/Debug/net7.0/refint/MeuPrimeiroProjeto.dll
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/Debug/net7.0/MeuPrimeiroProjeto.pdb
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/Debug/net7.0/MeuPrimeiroProjeto.genruntimeconfig.cache
+/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/Debug/net7.0/ref/MeuPrimeiroProjeto.dll
