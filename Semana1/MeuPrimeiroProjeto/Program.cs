@@ -19,6 +19,8 @@ Console.WriteLine("Hello, World!");
 #endregion
 
 #region Operadores
-
+    tipoDouble = tipoInteiro+tipoLong;
+    //Conversão implciita não é possivel visto que long e double não cabem num inteiro
+    //tipoInteiro=tipoDouble+tipoLong;
 
 #endregion
