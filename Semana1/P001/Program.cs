@@ -91,6 +91,21 @@ if(flag > 0){
     Console.WriteLine("a é menor que b.");
 }
 
+#endregion
+
+#region 
+/*Problema: Você tem duas strings, string str1 = "Hello" e string str2 = "World". Escreva 
+código para verificar se as duas strings são iguais e exibir o resultado.*/
+string str1 = "Hello", str2 = "World";
+bool igual;
+
+Console.WriteLine("\nString str1: "+str1+" String str2: "+str2);
+igual = string.Equals(str1,str2);
+if(igual){
+    Console.WriteLine("Duas strings iguais");
+}else{
+    Console.WriteLine("strings diferentes");
+}
 
 
 #endregion
