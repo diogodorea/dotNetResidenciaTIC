@@ -125,3 +125,24 @@ if(condicao1 && condicao2){
 }
 
 #endregion
+
+#region 
+/*Problema: Dadas as variáveis int num1 = 7, int num2 = 3, e int num3 = 10, escreva 
+código para verificar se num1 é maior do que num2 e se num3 é igual a num1 + num2.*/
+int num1 = 7, num2 = 3, num3 = 10;
+
+Console.WriteLine("\nnum1= "+num1+" num2= "+num2+" num3= "+num3);
+Console.WriteLine("condição 1: verificar se num1 é maior do que num2");
+if(num1 > num2){
+    Console.WriteLine("num1 é maior que num2");
+}else{
+    Console.WriteLine("num1 não é maior que num2");
+}
+Console.WriteLine("condição 2: verificar se num3 é igual a (num1 + num2)");
+if(num3 == (num1+num2)){
+    Console.WriteLine("num3 é igual a (num1 + num2)");
+}else {
+    Console.WriteLine("num3 não é igual a (num1 + num2)");
+}
+
+#endregion
