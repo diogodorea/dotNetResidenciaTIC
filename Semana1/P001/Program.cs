@@ -76,3 +76,21 @@ Console.WriteLine("Operação de divisão inteira: "+divisaointeira);
 Console.WriteLine("Operação de divisão real: "+divisaoreal+"\n");
 
 #endregion
+
+#region 
+/*Problema: Considere as variáveis int a = 5 e int b = 8. Escreva código para determinar 
+se a é maior que b e exiba o resultado.*/
+int a = 5, b = 8, flag = 0;
+
+flag = a.CompareTo(b);
+Console.WriteLine("Valor de a: "+a+" Valor de b: "+b);
+if(flag < 0){
+    Console.WriteLine("a é menor que b.");
+}
+if(flag > 0){
+    Console.WriteLine("a é menor que b.");
+}
+
+
+
+#endregion
