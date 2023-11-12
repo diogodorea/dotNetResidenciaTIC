@@ -53,7 +53,26 @@ int meuInt3 = 0;
 Console.WriteLine("Valor de tipoDouble: "+tipoDouble);
 Console.WriteLine("valor de meuInt3: "+meuInt3);
 meuInt3 = (int)Math.Round(tipoDouble);
-Console.WriteLine("Valor de meuInt3 apos atribuir tipoDouble utilizando metodo de arredondamento Math.round da CLasse Math: "+meuInt3);
+Console.WriteLine("Valor de meuInt3 apos atribuir tipoDouble utilizando metodo de arredondamento Math.round da CLasse Math: "+meuInt3+"\n");
 
 #endregion
 
+#region 
+/*Problema: Dada a variável int x = 10 e a variável int y = 3, escreva código para calcular 
+e exibir o resultado da adição, subtração, multiplicação e divisão de x por y.*/
+
+int x =10, y =3, adicao, subtracao, multiplicacao, divisaointeira;
+double divisaoreal;
+adicao = x + y;
+subtracao = x - y;
+multiplicacao = x * y;
+divisaointeira = x / y;
+divisaoreal = (double)x / y;
+Console.WriteLine("Valor de x: "+x+"\nValor de y: "+y);
+Console.WriteLine("Operação de adição: "+adicao);
+Console.WriteLine("Operação de subtração: "+subtracao);
+Console.WriteLine("Operação de multiplicação: "+multiplicacao);
+Console.WriteLine("Operação de divisão inteira: "+divisaointeira);
+Console.WriteLine("Operação de divisão real: "+divisaoreal+"\n");
+
+#endregion
