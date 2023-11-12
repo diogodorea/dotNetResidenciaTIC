@@ -3,6 +3,8 @@
 //  R: short, ushort, int, uint, long, ulong.
 // Dê exemplos de uso para cada um deles através de exemplos.
 
+using System.Reflection.Metadata;
+
 short tipoShort;
 ushort tipoUshort;
 int tipoInt;
@@ -107,5 +109,19 @@ if(igual){
     Console.WriteLine("strings diferentes");
 }
 
+#endregion
+
+#region
+/*Problema: Suponha que você tenha duas variáveis booleanas, bool condicao1 = true 
+e bool condicao2 = false. Escreva código para verificar se ambas as condições são 
+verdadeiras e exiba o resultado.*/
+
+bool condicao1 = true, condicao2 = false;
+Console.WriteLine("\ncondicao1= "+condicao1+" , condicao2= "+condicao2);
+if(condicao1 && condicao2){
+    Console.WriteLine("Ambas verdadeiras");    
+}else {
+    Console.WriteLine("Uma das consições é falsa");
+}
 
 #endregion
