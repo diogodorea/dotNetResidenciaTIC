@@ -8,19 +8,19 @@
     "net7.0": []
   },
   "packageFolders": {
-    "/home/diogo-dorea-santos/.nuget/packages/": {}
+    "/home/diogo/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/MeuPrimeiroProjeto.csproj",
+      "projectUniqueName": "/home/diogo/sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/MeuPrimeiroProjeto.csproj",
       "projectName": "MeuPrimeiroProjeto",
-      "projectPath": "/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/MeuPrimeiroProjeto.csproj",
-      "packagesPath": "/home/diogo-dorea-santos/.nuget/packages/",
-      "outputPath": "/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/",
+      "projectPath": "/home/diogo/sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/MeuPrimeiroProjeto.csproj",
+      "packagesPath": "/home/diogo/.nuget/packages/",
+      "outputPath": "/home/diogo/sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/diogo-dorea-santos/.nuget/NuGet/NuGet.Config"
+        "/home/diogo/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"

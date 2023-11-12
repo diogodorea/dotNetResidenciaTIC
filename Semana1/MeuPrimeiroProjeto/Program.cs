@@ -1,7 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
-
-#region Teste de tipos de dados
+﻿#region Teste de tipos de dados
 
     int tipoInteiro;
     double tipoDouble;

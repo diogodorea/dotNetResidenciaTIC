@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "BCADL+VItENmUftCVB9w95MigjCLT2OeHYMFC9zAueS/6mn65UZ4e572EMFuy+G5Ldaz2hbhWbsSKtKPeFhP7g==",
+  "dgSpecHash": "8TDqbuaYEgMHQOD8e7pnUg7BQXwIifJWTE1AEX4WFWHuPKESjdWzoA2g4WHCqr5aujsQlNC1IjPy2UbeMyAmmw==",
   "success": true,
-  "projectFilePath": "/home/diogo-dorea-santos/Sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/MeuPrimeiroProjeto.csproj",
+  "projectFilePath": "/home/diogo/sources/dotNetResidenciaTIC/Semana1/MeuPrimeiroProjeto/MeuPrimeiroProjeto.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
