@@ -1,0 +1,15 @@
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/bin/Debug/net7.0/exemplosAula
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/bin/Debug/net7.0/exemplosAula.deps.json
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/bin/Debug/net7.0/exemplosAula.runtimeconfig.json
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/bin/Debug/net7.0/exemplosAula.dll
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/bin/Debug/net7.0/exemplosAula.pdb
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/obj/Debug/net7.0/exemplosAula.csproj.AssemblyReference.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/obj/Debug/net7.0/exemplosAula.GeneratedMSBuildEditorConfig.editorconfig
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/obj/Debug/net7.0/exemplosAula.AssemblyInfoInputs.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/obj/Debug/net7.0/exemplosAula.AssemblyInfo.cs
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/obj/Debug/net7.0/exemplosAula.csproj.CoreCompileInputs.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/obj/Debug/net7.0/exemplosAula.dll
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/obj/Debug/net7.0/refint/exemplosAula.dll
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/obj/Debug/net7.0/exemplosAula.pdb
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/obj/Debug/net7.0/exemplosAula.genruntimeconfig.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana2/exemplosAula/obj/Debug/net7.0/ref/exemplosAula.dll
