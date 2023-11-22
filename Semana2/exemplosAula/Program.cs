@@ -11,10 +11,11 @@ for(int i=1; i<+30; i++){
 #endregion
 
 #region 
-// Console.WriteLine("Informe uma string: ");
-// string? str = Console.ReadLine();
-// Console.WriteLine($"A string foi {str}");
-// string[] strSlitted? = str.Split();
+Console.WriteLine("Informe uma string: ");
+string? str = Console.ReadLine();
+Console.WriteLine($"A string foi {str}");
+string[] strArray = str.Split(',');
+
 #endregion
 
 #region 
