@@ -15,8 +15,7 @@
     }
 }
 
-public class GerenciadorTarefas
-{
+public class GerenciadorTarefas {
     private List<Tarefa> listaTarefas;
 
     public GerenciadorTarefas() {
@@ -50,5 +49,73 @@ public class GerenciadorTarefas
             tarefa.Descricao = novaTarefa.Descricao;
             tarefa.Concluida = novaTarefa.Concluida;
         }
+    }
+}
+
+class Program {
+
+    static public bool ConverteSimNaoParaBoolean(string input) {
+        if (input.ToLower() == "s" || input.ToLower() == "sim") {
+            return true;
+        } else if (input.ToLower() == "n" || input.ToLower() == "não") {
+            return false;
+        } else {
+            throw new ArgumentException("Entrada inválida. Por favor, insira 's' ou 'n'.");
+        }
+}
+
+    static void Main(string[] args)
+    {
+        GerenciadorTarefas gerenciador = new GerenciadorTarefas();
+        int flag = 0;
+        do
+        {
+            Console.WriteLine("Digite 1 para adicionar uma tarefa");
+            Console.WriteLine("Digite 2 para listar as tarefas");
+            Console.WriteLine("Digite 3 para remover uma tarefa");
+            Console.WriteLine("Digite 4 para atualizar uma tarefa");
+            Console.WriteLine("Digite 0 para sair");
+            flag = int.Parse(Console.ReadLine());
+
+            switch (flag)
+            {
+                case 1:
+                    Console.WriteLine("Digite o título da tarefa");
+                    string titulo = Console.ReadLine();
+                    Console.WriteLine("Digite a descrição da tarefa");
+                    string descricao = Console.ReadLine();
+                    Console.WriteLine("Digite a data da tarefa (aaaa/mm/dd) Ano/Mês/Dia)");
+                    DateTime vencimento = DateTime.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite se a tarefa está concluída? Sim ou Não");
+                    bool concluida = ConverteSimNaoParaBoolean(Console.ReadLine());
+                    gerenciador.AdicionarTarefa(new Tarefa() { Titulo = titulo, Descricao = descricao, Vencimento = vencimento, Concluida = concluida });
+                    break;
+                case 2:
+                    gerenciador.ListarTarefas();
+                    break;
+                case 3:
+                    Console.WriteLine("Digite o ID da tarefa que deseja remover");
+                    int id = int.Parse(Console.ReadLine());
+                    gerenciador.RemoverTarefa(id);
+                    break;
+                case 4:
+                    Console.WriteLine("Digite o ID da tarefa que deseja atualizar");
+                    int idAtualizar = int.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite o título da tarefa");
+                    string novoTitulo = Console.ReadLine();
+                    Console.WriteLine("Digite a descrição da tarefa");
+                    string novaDescricao = Console.ReadLine();
+                    Console.WriteLine("Digite a data da tarefa (aaaa/mm/dd) Ano/Mês/Dia)");
+                    DateTime novaData = DateTime.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite se a tarefa está concluída");
+                    bool novoConcluido = bool.Parse(Console.ReadLine());
+                    gerenciador.AtualizarTarefa(idAtualizar, new Tarefa() { Titulo = novoTitulo, Descricao = novaDescricao, Vencimento = novaData, Concluida = novoConcluido });
+                    break;
+                
+                default:
+                    break;
+            }        
+        } while (flag != 0);
+
     }
 }
