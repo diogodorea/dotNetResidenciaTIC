@@ -80,6 +80,19 @@ public class GerenciadorTarefas {
             }
         }
     }
+
+    public void Estatisticas() {
+            int totalTarefas = listaTarefas.Count;
+            int totalConcluidas = listaTarefas.Count(t => t.Concluida);
+            int totalPendentes = listaTarefas.Count(t => !t.Concluida);
+            DateTime menorData = listaTarefas.Min(t => t.dtCriacao);
+            DateTime maiorData = listaTarefas.Max(t => t.dtCriacao);
+            Console.WriteLine($"Total de tarefas: {totalTarefas}");
+            Console.WriteLine($"Total de tarefas concluídas: {totalConcluidas}");
+            Console.WriteLine($"Total de tarefas pendentes: {totalPendentes}");
+            Console.WriteLine($"Data da tarefa mais antiga: {menorData}");
+            Console.WriteLine($"Data da tarefa mais recente: {maiorData}");
+        }
 }
 
 class Program {
@@ -107,6 +120,7 @@ class Program {
             Console.WriteLine("Digite 5 para listar as tarefas concluídas");
             Console.WriteLine("Digite 6 para listar as tarefas pendentes");
             Console.WriteLine("Digite 7 para localizar uma tarefa");
+            Console.WriteLine("Digite 8 para ver as estatísticas");
             Console.WriteLine("Digite 0 para sair");
             flag = int.Parse(Console.ReadLine());
 
