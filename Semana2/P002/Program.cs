@@ -32,6 +32,25 @@ public class GerenciadorTarefas {
         }
     }
 
+    public void ListarTarefasConcluidas() {
+        foreach (Tarefa tarefa in listaTarefas)
+        {
+            if (tarefa.Concluida)
+            {
+                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Concluída: {tarefa.Concluida}");
+            }
+        }
+    }
+    public void ListarTarefasPendentes() {
+        foreach (Tarefa tarefa in listaTarefas)
+        {
+            if (!tarefa.Concluida)
+            {
+                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Concluída: {tarefa.Concluida}");
+            }
+        }
+    }
+
     public void RemoverTarefa(int id)
     {
         Tarefa tarefa = listaTarefas.Find(t => t.Id == id);
@@ -48,6 +67,17 @@ public class GerenciadorTarefas {
             tarefa.Titulo = novaTarefa.Titulo;
             tarefa.Descricao = novaTarefa.Descricao;
             tarefa.Concluida = novaTarefa.Concluida;
+        }
+    }
+
+    public void LocalizarPalavraChave(string keyword) {
+        foreach (Tarefa tarefa in listaTarefas)
+        {
+            if (tarefa.Titulo.Contains(keyword) || tarefa.Descricao.Contains(keyword)) {
+                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Concluída: {tarefa.Concluida}");
+            } else {
+                Console.WriteLine("Nenhuma tarefa encontrada");
+            }
         }
     }
 }
@@ -74,6 +104,9 @@ class Program {
             Console.WriteLine("Digite 2 para listar as tarefas");
             Console.WriteLine("Digite 3 para remover uma tarefa");
             Console.WriteLine("Digite 4 para atualizar uma tarefa");
+            Console.WriteLine("Digite 5 para listar as tarefas concluídas");
+            Console.WriteLine("Digite 6 para listar as tarefas pendentes");
+            Console.WriteLine("Digite 7 para localizar uma tarefa");
             Console.WriteLine("Digite 0 para sair");
             flag = int.Parse(Console.ReadLine());
 
@@ -111,7 +144,12 @@ class Program {
                     bool novoConcluido = bool.Parse(Console.ReadLine());
                     gerenciador.AtualizarTarefa(idAtualizar, new Tarefa() { Titulo = novoTitulo, Descricao = novaDescricao, Vencimento = novaData, Concluida = novoConcluido });
                     break;
-                
+                    case 5:
+                    gerenciador.ListarTarefasConcluidas();
+                    break;
+                case 6:
+                    gerenciador.ListarTarefasPendentes();
+                    break;                
                 default:
                     break;
             }        
