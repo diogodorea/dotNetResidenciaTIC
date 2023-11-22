@@ -2,7 +2,7 @@
 {
     
     private static int nextId = 1;
-    public DateTime dtCriacao = DateTime.Now;
+    public DateTime dtCriacao;
     public int Id { get; set; }
     public string Titulo { get; set; }
     public string Descricao { get; set; }
@@ -11,7 +11,7 @@
 
     public Tarefa() {
         this.Id = nextId++;
-        this.Vencimento = DateTime.Now;
+        this.dtCriacao = DateTime.Now;
     }
 }
 
@@ -163,7 +163,15 @@ class Program {
                     break;
                 case 6:
                     gerenciador.ListarTarefasPendentes();
-                    break;                
+                    break;
+                case 7:
+                    Console.WriteLine("Digite uma palavra chave para localizar uma tarefa");
+                    string palavraChave = Console.ReadLine();
+                    gerenciador.LocalizarPalavraChave(palavraChave);
+                    break;
+                case 8:
+                    gerenciador.Estatisticas();
+                    break;             
                 default:
                     break;
             }        
