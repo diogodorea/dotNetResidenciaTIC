@@ -76,7 +76,7 @@ public class GerenciadorTarefas {
         foreach (Tarefa tarefa in listaTarefas)
         {
             if (tarefa.Titulo.Contains(keyword) || tarefa.Descricao.Contains(keyword)) {
-                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida}");
+                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida.ToString().Replace("True","Sim").Replace("False","Não")}");
             } else {
                 Console.WriteLine("Nenhuma tarefa encontrada");
             }
