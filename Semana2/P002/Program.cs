@@ -68,6 +68,7 @@ public class GerenciadorTarefas {
             tarefa.Titulo = novaTarefa.Titulo;
             tarefa.Descricao = novaTarefa.Descricao;
             tarefa.Concluida = novaTarefa.Concluida;
+            tarefa.Vencimento = novaTarefa.Vencimento;
         }
     }
 
