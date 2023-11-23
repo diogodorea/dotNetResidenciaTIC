@@ -16,6 +16,7 @@
 }
 
 public class GerenciadorTarefas {
+    
     private List<Tarefa> listaTarefas;
 
     public GerenciadorTarefas() {
@@ -28,7 +29,7 @@ public class GerenciadorTarefas {
     
     public void ListarTarefas() {
         foreach (Tarefa tarefa in listaTarefas) {
-            Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Concluída: {tarefa.Concluida}");
+            Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida}");
         }
     }
 
@@ -37,7 +38,7 @@ public class GerenciadorTarefas {
         {
             if (tarefa.Concluida)
             {
-                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Concluída: {tarefa.Concluida}");
+                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida}");
             }
         }
     }
@@ -46,7 +47,7 @@ public class GerenciadorTarefas {
         {
             if (!tarefa.Concluida)
             {
-                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Concluída: {tarefa.Concluida}");
+                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida}");
             }
         }
     }
@@ -74,7 +75,7 @@ public class GerenciadorTarefas {
         foreach (Tarefa tarefa in listaTarefas)
         {
             if (tarefa.Titulo.Contains(keyword) || tarefa.Descricao.Contains(keyword)) {
-                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Concluída: {tarefa.Concluida}");
+                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida}");
             } else {
                 Console.WriteLine("Nenhuma tarefa encontrada");
             }
@@ -131,8 +132,8 @@ class Program {
                     string titulo = Console.ReadLine();
                     Console.WriteLine("Digite a descrição da tarefa");
                     string descricao = Console.ReadLine();
-                    Console.WriteLine("Digite a data da tarefa (aaaa/mm/dd) Ano/Mês/Dia)");
-                    DateTime vencimento = DateTime.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite a data de vencimento da tarefa (dd/mm/aaaa) Dia/Mes/Ano)");
+                    DateTime vencimento = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
                     Console.WriteLine("Digite se a tarefa está concluída? Sim ou Não");
                     bool concluida = ConverteSimNaoParaBoolean(Console.ReadLine());
                     gerenciador.AdicionarTarefa(new Tarefa() { Titulo = titulo, Descricao = descricao, Vencimento = vencimento, Concluida = concluida });
@@ -152,8 +153,8 @@ class Program {
                     string novoTitulo = Console.ReadLine();
                     Console.WriteLine("Digite a descrição da tarefa");
                     string novaDescricao = Console.ReadLine();
-                    Console.WriteLine("Digite a data da tarefa (aaaa/mm/dd) Ano/Mês/Dia)");
-                    DateTime novaData = DateTime.Parse(Console.ReadLine());
+                    Console.WriteLine("Digite a data de vencimento da tarefa (dd/mm/aaa) Dia/Mes/Ano)");
+                    DateTime novaData = DateTime.ParseExact(Console.ReadLine(),"dd/MM/yyyy",null);
                     Console.WriteLine("Digite se a tarefa está concluída");
                     bool novoConcluido = bool.Parse(Console.ReadLine());
                     gerenciador.AtualizarTarefa(idAtualizar, new Tarefa() { Titulo = novoTitulo, Descricao = novaDescricao, Vencimento = novaData, Concluida = novoConcluido });
