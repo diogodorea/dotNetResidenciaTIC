@@ -11,6 +11,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Semana2", "Semana2", "{F95F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exemplosAula", "Semana2\exemplosAula\exemplosAula.csproj", "{FEC39483-AB71-4834-953F-7DEFE717AC62}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Semana3", "Semana3", "{695DF0E6-CEE7-4DF2-8053-E1DF7F3E9FCF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exemplosAula", "Semana3\exemplosAula\exemplosAula.csproj", "{33EDFB73-A618-4061-87FD-9D06EE80831F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -25,6 +29,10 @@ Global
 		{FEC39483-AB71-4834-953F-7DEFE717AC62}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FEC39483-AB71-4834-953F-7DEFE717AC62}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FEC39483-AB71-4834-953F-7DEFE717AC62}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33EDFB73-A618-4061-87FD-9D06EE80831F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33EDFB73-A618-4061-87FD-9D06EE80831F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33EDFB73-A618-4061-87FD-9D06EE80831F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33EDFB73-A618-4061-87FD-9D06EE80831F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -32,6 +40,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{E04D85D2-7080-4139-84F1-58CCB01D7446} = {6E6F78F9-AF59-48DA-BD42-38D1DD526390}
 		{FEC39483-AB71-4834-953F-7DEFE717AC62} = {F95FD6C1-67AF-4014-A2FE-7BB306EA85F1}
+		{33EDFB73-A618-4061-87FD-9D06EE80831F} = {695DF0E6-CEE7-4DF2-8053-E1DF7F3E9FCF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {72A7F931-D020-45F9-ABB8-6C06662ABE9D}
