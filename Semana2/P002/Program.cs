@@ -156,7 +156,7 @@ class Program {
                     Console.WriteLine("Digite a data de vencimento da tarefa (dd/mm/aaa) Dia/Mes/Ano)");
                     DateTime novaData = DateTime.ParseExact(Console.ReadLine(),"dd/MM/yyyy",null);
                     Console.WriteLine("Digite se a tarefa está concluída");
-                    bool novoConcluido = bool.Parse(Console.ReadLine());
+                    bool novoConcluido = ConverteSimNaoParaBoolean(Console.ReadLine());
                     gerenciador.AtualizarTarefa(idAtualizar, new Tarefa() { Titulo = novoTitulo, Descricao = novaDescricao, Vencimento = novaData, Concluida = novoConcluido });
                     break;
                     case 5:
