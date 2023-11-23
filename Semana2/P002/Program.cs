@@ -92,8 +92,8 @@ public class GerenciadorTarefas {
             Console.WriteLine($"Total de tarefas: {totalTarefas}");
             Console.WriteLine($"Total de tarefas concluídas: {totalConcluidas}");
             Console.WriteLine($"Total de tarefas pendentes: {totalPendentes}");
-            Console.WriteLine($"Data da tarefa mais antiga: {menorData}");
-            Console.WriteLine($"Data da tarefa mais recente: {maiorData}");
+            Console.WriteLine($"Data da tarefa mais antiga pela data de criação: {menorData.ToString("dd/MM/yyyy hh:mm:ss")}");
+            Console.WriteLine($"Data da tarefa mais recente pela data de criação: {maiorData.ToString("dd/MM/yyyy hh:mm:ss")}");
         }
 }
 
