@@ -29,7 +29,7 @@ public class GerenciadorTarefas {
     
     public void ListarTarefas() {
         foreach (Tarefa tarefa in listaTarefas) {
-            Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida}");
+            Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida.ToString().Replace("True","Sim").Replace("False","Não")}");
         }
     }
 
@@ -38,7 +38,7 @@ public class GerenciadorTarefas {
         {
             if (tarefa.Concluida)
             {
-                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida}");
+                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida.ToString().Replace("True","Sim").Replace("False","Não")}");
             }
         }
     }
@@ -47,7 +47,7 @@ public class GerenciadorTarefas {
         {
             if (!tarefa.Concluida)
             {
-                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida}");
+                Console.WriteLine($"ID: {tarefa.Id} - Título: {tarefa.Titulo} - Descrição: {tarefa.Descricao} - Vencimento: {tarefa.Vencimento.Day}/{tarefa.Vencimento.Month}/{tarefa.Vencimento.Year} - Concluída: {tarefa.Concluida.ToString().Replace("True","Sim").Replace("False","Não")}");
             }
         }
     }
@@ -135,7 +135,7 @@ class Program {
                     string descricao = Console.ReadLine();
                     Console.WriteLine("Digite a data de vencimento da tarefa (dd/mm/aaaa) Dia/Mes/Ano)");
                     DateTime vencimento = DateTime.ParseExact(Console.ReadLine(), "dd/MM/yyyy", null);
-                    Console.WriteLine("Digite se a tarefa está concluída? Sim ou Não");
+                    Console.WriteLine("Digite se a tarefa está concluída? (Sim ou Não) (S ou N)");
                     bool concluida = ConverteSimNaoParaBoolean(Console.ReadLine());
                     gerenciador.AdicionarTarefa(new Tarefa() { Titulo = titulo, Descricao = descricao, Vencimento = vencimento, Concluida = concluida });
                     break;
@@ -156,7 +156,7 @@ class Program {
                     string novaDescricao = Console.ReadLine();
                     Console.WriteLine("Digite a data de vencimento da tarefa (dd/mm/aaa) Dia/Mes/Ano)");
                     DateTime novaData = DateTime.ParseExact(Console.ReadLine(),"dd/MM/yyyy",null);
-                    Console.WriteLine("Digite se a tarefa está concluída");
+                    Console.WriteLine("Digite se a tarefa está concluída? (Sim ou Não) (S ou N)");
                     bool novoConcluido = ConverteSimNaoParaBoolean(Console.ReadLine());
                     gerenciador.AtualizarTarefa(idAtualizar, new Tarefa() { Titulo = novoTitulo, Descricao = novaDescricao, Vencimento = novaData, Concluida = novoConcluido });
                     break;
