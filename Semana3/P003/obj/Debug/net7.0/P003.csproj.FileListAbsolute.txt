@@ -1,0 +1,15 @@
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/bin/Debug/net7.0/P003
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/bin/Debug/net7.0/P003.deps.json
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/bin/Debug/net7.0/P003.runtimeconfig.json
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/bin/Debug/net7.0/P003.dll
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/bin/Debug/net7.0/P003.pdb
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/obj/Debug/net7.0/P003.csproj.AssemblyReference.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/obj/Debug/net7.0/P003.GeneratedMSBuildEditorConfig.editorconfig
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/obj/Debug/net7.0/P003.AssemblyInfoInputs.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/obj/Debug/net7.0/P003.AssemblyInfo.cs
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/obj/Debug/net7.0/P003.csproj.CoreCompileInputs.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/obj/Debug/net7.0/P003.dll
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/obj/Debug/net7.0/refint/P003.dll
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/obj/Debug/net7.0/P003.pdb
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/obj/Debug/net7.0/P003.genruntimeconfig.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana3/P003/obj/Debug/net7.0/ref/P003.dll
