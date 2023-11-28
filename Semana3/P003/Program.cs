@@ -1,8 +1,12 @@
-﻿    class Program
+﻿using System.Diagnostics;
+
+class Program
     {
         static void Main(string[] args)
         {
-            List<(int, string, int, float)> inventario = new List<(int, string, int, float)> {};
+            List<(int, string, int, float)> inventario = new List<(int, string, int, float)> {
+                //(0,"nome", 0, 0)
+            };
 
             Console.WriteLine("Sistema Gerenciamento Estoque");
             Console.WriteLine("---------------------------");
@@ -12,7 +16,8 @@
                 Console.WriteLine("2. Adicionar Item");
                 Console.WriteLine("3. Remover Item");
                 Console.WriteLine("4. Consultar Item");
-                Console.WriteLine("5. Sair");
+                Console.WriteLine("5. Atualizar Estoque");
+                Console.WriteLine("6. Sair");
                 Console.Write("Escolha uma opção: ");
   
                 try{
@@ -31,10 +36,10 @@
                             ConsultarItem(inventario);
                             break;
                         case 5:
-                            Console.WriteLine("Exiting...");
+                            AtualizarEstoque(inventario);
                             return;
                         default:
-                            Console.WriteLine("Opção invalida, digite um valor numerico correspondente de 1 a 5.");
+                            Console.WriteLine("Opção invalida, digite um valor numerico correspondente de 1 a 6.");
                             break;
                     }
                 }
@@ -60,6 +65,7 @@
             
             Console.Write("Digite o codigo do item: ");
             int itemCodigo = int.Parse(Console.ReadLine());
+            //to do: validar se codigo ja existe, codigo nao pode ser 0;
 
             Console.Write("Digite o nome do item: ");
             string itemName = Console.ReadLine();
@@ -80,22 +86,6 @@
                 Console.WriteLine("Erro: " + e.Message);
             }
         }
-
-        static void ConsultarItem(List<(int, string, int, float)> inventario) {
-            Console.Write("Digite o codigo do item: ");
-            string itemCodigo = Console.ReadLine();
-            try{
-                var item = inventario.FirstOrDefault(i => i.Item1.ToString().Equals(itemCodigo));
-                if (item.Item1 == 0) {
-                    throw new Exception("Item nao encontrado no inventario Teste.");
-                }
-                Console.WriteLine($"CODIGO: NOME: QUANTIDADE: VALOR");
-                Console.WriteLine($"{item.Item1}: {item.Item2}: {item.Item3}: {item.Item4}");
-            }
-            catch (Exception e){
-                Console.WriteLine("Erro: " + e.Message);
-            }
-        }
         static void RemoverItem(List<(int, string, int, float)> inventory) {
             Console.Write("Digite o nome do item: ");
             string itemName = Console.ReadLine();
@@ -108,4 +98,43 @@
                 Console.WriteLine("Item nao encontrado no inventario.");
             }
         }
+
+        static void ConsultarItem(List<(int, string, int, float)> inventario) {
+            Console.Write("Digite o codigo do item: ");
+            string itemCodigo = Console.ReadLine();
+            try{
+                var itemaux = inventario.FirstOrDefault(i => i.Item1.ToString().Equals(itemCodigo));
+                if (itemaux.Item1 == 0) {
+                    throw new Exception("Item nao encontrado no inventario Teste.");
+                }
+                Console.WriteLine($"CODIGO: NOME: QUANTIDADE: VALOR");
+                Console.WriteLine($"{itemaux.Item1}: {itemaux.Item2}: {itemaux.Item3}: {itemaux.Item4}");
+            }
+            catch (Exception e){
+                Console.WriteLine("Erro: " + e.Message);
+            }
+        }
+
+        static void AtualizarEstoque(List<(int, string, int, float)> inventario) {
+            Console.Write("Digite o codigo do item: ");
+            string itemCodigo = Console.ReadLine();
+            try{
+                var itemaux = inventario.FirstOrDefault(i => i.Item1.ToString().Equals(itemCodigo));
+                if (itemaux.Item1 == 0) {
+                    throw new Exception("Item nao encontrado no inventario Teste.");
+                }
+                Console.Write("Digite a quantidade: ");
+                int quantidade = int.Parse(Console.ReadLine());
+                inventario.Remove(itemaux);
+                inventario.Add((itemaux.Item1, itemaux.Item2, quantidade, itemaux.Item4));
+                Console.WriteLine("Estoque atualizado com sucesso.");
+                //return;
+            }
+            catch (Exception e){
+                Console.WriteLine("Erro: " + e.Message);
+                //todo: tratar erro Programa finaliza ao exibir esta excessao.
+                
+            }
+        }
+
     }
