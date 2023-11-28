@@ -2,7 +2,7 @@
     {
         static void Main(string[] args)
         {
-            List<(int, string, int)> inventario = new List<(int, string, int)> {};
+            List<(int, string, int, float)> inventario = new List<(int, string, int, float)> {};
 
             Console.WriteLine("Sistema Gerenciamento Estoque");
             Console.WriteLine("---------------------------");
@@ -43,16 +43,16 @@
             }
         }
 
-        static void VisualizarInventario(List<(int, string, int)> inventario) {
+        static void VisualizarInventario(List<(int, string, int, float)> inventario) {
             Console.WriteLine("Inventario:");
-            Console.WriteLine($"CODIGO: NOME: QUANTIDADE:");
+            Console.WriteLine($"CODIGO: NOME: QUANTIDADE: VALOR");
             
             foreach (var item in inventario) {
-                Console.WriteLine($"{item.Item1}: {item.Item2}: {item.Item3}");
+                Console.WriteLine($"{item.Item1}: {item.Item2}: {item.Item3}: {item.Item4}");
             }
         }
 
-        static void AdicionarItem(List<(int, string, int)> inventory) {
+        static void AdicionarItem(List<(int, string, int, float)> inventario) {
             
             Console.Write("Digite o codigo do item: ");
             int itemCodigo = int.Parse(Console.ReadLine());
@@ -60,10 +60,14 @@
             Console.Write("Digite o nome do item: ");
             string itemName = Console.ReadLine();
 
+            Console.WriteLine("Digite o valor: ");
+            float valor = float.Parse(Console.ReadLine());
+
             Console.Write("Digite a quantidade: ");
             int quantidade;
+
             if (int.TryParse(Console.ReadLine(), out quantidade)) {
-                inventory.Add((itemCodigo, itemName, quantidade));
+                inventario.Add((itemCodigo, itemName, quantidade, valor));
                 Console.WriteLine("Item adicionado com sucesso.");
             }
             else {
@@ -71,7 +75,7 @@
             }
         }
 
-        static void RemoverItem(List<(int, string, int)> inventory) {
+        static void RemoverItem(List<(int, string, int, float)> inventory) {
             Console.Write("Digite o nome do item: ");
             string itemName = Console.ReadLine();
 
