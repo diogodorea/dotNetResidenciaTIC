@@ -2,7 +2,7 @@
     {
         static void Main(string[] args)
         {
-            List<(string, int)> inventario = new List<(string, int)> {};
+            List<(int, string, int)> inventario = new List<(int, string, int)> {};
 
             Console.WriteLine("Sistema Gerenciamento Estoque");
             Console.WriteLine("---------------------------");
@@ -43,21 +43,27 @@
             }
         }
 
-        static void VisualizarInventario(List<(string, int)> inventario) {
+        static void VisualizarInventario(List<(int, string, int)> inventario) {
             Console.WriteLine("Inventario:");
+            Console.WriteLine($"CODIGO: NOME: QUANTIDADE:");
+            
             foreach (var item in inventario) {
-                Console.WriteLine($"{item.Item1}: {item.Item2}");
+                Console.WriteLine($"{item.Item1}: {item.Item2}: {item.Item3}");
             }
         }
 
-        static void AdicionarItem(List<(string, int)> inventory) {
+        static void AdicionarItem(List<(int, string, int)> inventory) {
+            
+            Console.Write("Digite o codigo do item: ");
+            int itemCodigo = int.Parse(Console.ReadLine());
+
             Console.Write("Digite o nome do item: ");
             string itemName = Console.ReadLine();
 
             Console.Write("Digite a quantidade: ");
-            int quantity;
-            if (int.TryParse(Console.ReadLine(), out quantity)) {
-                inventory.Add((itemName, quantity));
+            int quantidade;
+            if (int.TryParse(Console.ReadLine(), out quantidade)) {
+                inventory.Add((itemCodigo, itemName, quantidade));
                 Console.WriteLine("Item adicionado com sucesso.");
             }
             else {
@@ -65,11 +71,11 @@
             }
         }
 
-        static void RemoverItem(List<(string, int)> inventory) {
+        static void RemoverItem(List<(int, string, int)> inventory) {
             Console.Write("Digite o nome do item: ");
             string itemName = Console.ReadLine();
 
-            var item = inventory.FirstOrDefault(i => i.Item1.Equals(itemName, StringComparison.OrdinalIgnoreCase));
+            var item = inventory.FirstOrDefault(i => i.Item2.Equals(itemName, StringComparison.OrdinalIgnoreCase));
             if (item.Item1 != null) {
                 inventory.Remove(item);
                 Console.WriteLine("Item removido com sucesso.");
