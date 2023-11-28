@@ -13,10 +13,9 @@
                 Console.WriteLine("3. Remover Item");
                 Console.WriteLine("4. Sair");
                 Console.Write("Escolha uma opção: ");
-
-                int escolha;
-                if (int.TryParse(Console.ReadLine(), out escolha))
-                {
+  
+                try{
+                    int escolha = int.Parse(Console.ReadLine());
                     switch (escolha) {
                         case 1:
                             VisualizarInventario(inventario);
@@ -31,15 +30,16 @@
                             Console.WriteLine("Exiting...");
                             return;
                         default:
-                            Console.WriteLine("Invalid choice. Please try again.");
+                            Console.WriteLine("Opção invalida, digite um valor numerico correspondente de 1 a 4.");
                             break;
                     }
                 }
-                else {
-                    Console.WriteLine("Invalid choice. Please try again.");
+                catch (Exception e){
+                    Console.WriteLine("Erro: " + e.Message);
+                    Console.WriteLine("Opção invalida, digite um valor numerico.");
+                    continue;
                 }
-
-                Console.WriteLine();
+                 Console.WriteLine();
             }
         }
 
@@ -66,19 +66,20 @@
             Console.Write("Digite a quantidade: ");
             int quantidade;
 
-            if (int.TryParse(Console.ReadLine(), out quantidade)) {
+            try{
+                quantidade = int.Parse(Console.ReadLine());
                 inventario.Add((itemCodigo, itemName, quantidade, valor));
                 Console.WriteLine("Item adicionado com sucesso.");
             }
-            else {
+            catch (Exception e){
                 Console.WriteLine("Quantidade invalida, item não adicionado.");
+                Console.WriteLine("Erro: " + e.Message);
             }
         }
 
         static void RemoverItem(List<(int, string, int, float)> inventory) {
             Console.Write("Digite o nome do item: ");
             string itemName = Console.ReadLine();
-
             var item = inventory.FirstOrDefault(i => i.Item2.Equals(itemName, StringComparison.OrdinalIgnoreCase));
             if (item.Item1 != null) {
                 inventory.Remove(item);
