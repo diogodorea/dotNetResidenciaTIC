@@ -11,7 +11,8 @@
                 Console.WriteLine("1. Visualizar Inventario");
                 Console.WriteLine("2. Adicionar Item");
                 Console.WriteLine("3. Remover Item");
-                Console.WriteLine("4. Sair");
+                Console.WriteLine("4. Consultar Item");
+                Console.WriteLine("5. Sair");
                 Console.Write("Escolha uma opção: ");
   
                 try{
@@ -27,10 +28,13 @@
                             RemoverItem(inventario);
                             break;
                         case 4:
+                            ConsultarItem(inventario);
+                            break;
+                        case 5:
                             Console.WriteLine("Exiting...");
                             return;
                         default:
-                            Console.WriteLine("Opção invalida, digite um valor numerico correspondente de 1 a 4.");
+                            Console.WriteLine("Opção invalida, digite um valor numerico correspondente de 1 a 5.");
                             break;
                     }
                 }
@@ -77,6 +81,21 @@
             }
         }
 
+        static void ConsultarItem(List<(int, string, int, float)> inventario) {
+            Console.Write("Digite o codigo do item: ");
+            string itemCodigo = Console.ReadLine();
+            try{
+                var item = inventario.FirstOrDefault(i => i.Item1.ToString().Equals(itemCodigo));
+                if (item.Item1 == 0) {
+                    throw new Exception("Item nao encontrado no inventario Teste.");
+                }
+                Console.WriteLine($"CODIGO: NOME: QUANTIDADE: VALOR");
+                Console.WriteLine($"{item.Item1}: {item.Item2}: {item.Item3}: {item.Item4}");
+            }
+            catch (Exception e){
+                Console.WriteLine("Erro: " + e.Message);
+            }
+        }
         static void RemoverItem(List<(int, string, int, float)> inventory) {
             Console.Write("Digite o nome do item: ");
             string itemName = Console.ReadLine();
