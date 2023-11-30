@@ -3,13 +3,6 @@
     public string Modelo { get; set; }
     public int Ano { get; set; }
 
-      
-    public Veiculo(string cor, string modelo, int ano) {
-        Cor = cor;
-        Modelo = modelo;
-        Ano = ano;
-    }
-
     public void toString (){
         Console.WriteLine("Cor: {0}", Cor);
         Console.WriteLine("Modelo: {0}", Modelo);
@@ -21,9 +14,18 @@
 public class Program {
     public static void Main(string[] args)
     {
-        var carro = new Veiculo("Azul", "Fusca", 1970);
-        var moto = new Veiculo("Vermelha", "CG", 2010);
-        var caminhao = new Veiculo("Branco", "Mercedes", 2015);
+        var carro = new Veiculo();
+        carro.Cor = "Azul";
+        carro.Modelo = "Fusca";
+        carro.Ano = 1970;
+        var moto = new Veiculo();
+        moto.Cor = "Vermelha";
+        moto.Modelo = "Honda";
+        moto.Ano = 2010;
+        var caminhao = new Veiculo();
+        caminhao.Cor = "Branco";
+        caminhao.Modelo = "Mercedes";
+        caminhao.Ano = 2015;
         
         carro.toString();
         moto.toString();
