@@ -78,17 +78,16 @@ public class Advogado : Pessoa
         }
     }
 
-    public Advogado(string nome, string cpf, DateTime dataNascimento) : base(nome, cpf, dataNascimento)
+    public Advogado(string nome, string cpf, DateTime dataNascimento, string CNA) : base(nome, cpf, dataNascimento)
     {
 
     }
 }
 
-
 public class Cliente : Pessoa {
     public string profissao { get; set; }
     public string Ecivil { get; set; }
-    public Cliente(string nome, string cpf, DateTime dataNascimento, string ecivil) : base(nome, cpf, dataNascimento) {
+    public Cliente(string nome, string cpf, DateTime dataNascimento, string ecivil, string profissao, string Ecivil) : base(nome, cpf, dataNascimento) {
     }
 }
 
@@ -96,18 +95,29 @@ public class Program {
     public static void Main(string[] args) {
         List<Advogado> advogados = new List<Advogado>();
         List<Cliente> clientes = new List<Cliente>();
-        advogados.Add(new Advogado("João", "12345678901", new DateTime(1990, 1, 1)));
-        advogados.Add(new Advogado("Maria", "12345978901", new DateTime(1990, 1, 1)));
-        clientes.Add(new Cliente("José", "12345678985", new DateTime(1990, 1, 1), "Casado"));
-        clientes.Add(new Cliente("Ana", "98765432158", new DateTime(1990, 1, 1), "Solteiro"));
+        advogados.Add(new Advogado("João", "12345678901", new DateTime(1990, 1, 1),"456798"));
+        advogados.Add(new Advogado("Maria", "12345978901", new DateTime(1990, 1, 1),"456798"));
+        clientes.Add(new Cliente("José", "12345678985", new DateTime(1990, 1, 1), "Programador", "sim", "Casado"));
+        clientes.Add(new Cliente("Ana", "98765432158", new DateTime(1990, 1, 1), "Engenheiro", "Não", "Solteiro"));
         
         foreach (var advogado in advogados) {
             Console.WriteLine($"Advogado: {advogado.Nome} - {advogado.Cpf} - {advogado.DataNascimento} - {advogado.CNA}");        
         }
         
         foreach (var cliente in clientes) {     
-            Console.WriteLine($"Cliente: {cliente.Nome} - {cliente.Cpf} - {cliente.DataNascimento} - {cliente.Ecivil}");
+            Console.WriteLine($"Cliente: {cliente.Nome} - {cliente.Cpf} - {cliente.DataNascimento} - {cliente.profissao} - {cliente.Ecivil}");
             
         }
+
+        int idadeA = 10, idadeB = 30;
+
+        var advogadoEntreIdades = advogados.Where(a => a.DataNascimento.Year >= idadeA && a.DataNascimento.Year <= idadeB);
+        foreach var (advogado in advogadoEntreIdades) {
+            Console.WriteLine($"Advogado: {advogado.Nome} - {advogado.Cpf} - {advogado.DataNascimento} - {advogado.CNA}");        
+        }
+    
+
+
+
     }
 }
