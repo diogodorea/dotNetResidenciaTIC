@@ -1,0 +1,15 @@
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/bin/Debug/net7.0/exerciciosAula
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/bin/Debug/net7.0/exerciciosAula.deps.json
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/bin/Debug/net7.0/exerciciosAula.runtimeconfig.json
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/bin/Debug/net7.0/exerciciosAula.dll
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/bin/Debug/net7.0/exerciciosAula.pdb
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/obj/Debug/net7.0/exerciciosAula.csproj.AssemblyReference.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/obj/Debug/net7.0/exerciciosAula.GeneratedMSBuildEditorConfig.editorconfig
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/obj/Debug/net7.0/exerciciosAula.AssemblyInfoInputs.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/obj/Debug/net7.0/exerciciosAula.AssemblyInfo.cs
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/obj/Debug/net7.0/exerciciosAula.csproj.CoreCompileInputs.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/obj/Debug/net7.0/exerciciosAula.dll
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/obj/Debug/net7.0/refint/exerciciosAula.dll
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/obj/Debug/net7.0/exerciciosAula.pdb
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/obj/Debug/net7.0/exerciciosAula.genruntimeconfig.cache
+/home/diogo/sources/dotNetResidenciaTIC/Semana4/exerciciosAula/obj/Debug/net7.0/ref/exerciciosAula.dll
