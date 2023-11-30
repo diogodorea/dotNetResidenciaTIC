@@ -4,9 +4,7 @@ class Program
     {
         static void Main(string[] args)
         {
-            List<(int, string, int, float)> inventario = new List<(int, string, int, float)> {
-                //(0,"nome", 0, 0)
-            };
+            List<(int, string, int, float)> inventario = new ();
 
             Console.WriteLine("Sistema Gerenciamento Estoque");
             Console.WriteLine("---------------------------");
@@ -37,7 +35,7 @@ class Program
                             break;
                         case 5:
                             AtualizarEstoque(inventario);
-                            return;
+                            break;
                         default:
                             Console.WriteLine("Opção invalida, digite um valor numerico correspondente de 1 a 6.");
                             break;
@@ -57,7 +55,7 @@ class Program
             Console.WriteLine($"CODIGO: NOME: QUANTIDADE: VALOR");
             
             foreach (var item in inventario) {
-                Console.WriteLine($"{item.Item1}: {item.Item2}: {item.Item3}: {item.Item4}");
+                Console.WriteLine($"{item.Item1} : {item.Item2} : {item.Item3} : {item.Item4}");
             }
         }
 
@@ -117,24 +115,25 @@ class Program
 
         static void AtualizarEstoque(List<(int, string, int, float)> inventario) {
             Console.Write("Digite o codigo do item: ");
-            string itemCodigo = Console.ReadLine();
-            try{
-                var itemaux = inventario.FirstOrDefault(i => i.Item1.ToString().Equals(itemCodigo));
-                if (itemaux.Item1 == 0) {
-                    throw new Exception("Item nao encontrado no inventario Teste.");
-                }
-                Console.Write("Digite a quantidade: ");
-                int quantidade = int.Parse(Console.ReadLine());
-                inventario.Remove(itemaux);
-                inventario.Add((itemaux.Item1, itemaux.Item2, quantidade, itemaux.Item4));
-                Console.WriteLine("Estoque atualizado com sucesso.");
-                //return;
+            int itemCodigo = int.Parse(Console.ReadLine());
+            var item = inventario.FirstOrDefault(i => i.Item1 == itemCodigo);
+            if (item.Item1 == 0) {
+                Console.WriteLine("Item nao encontrado no inventario.");
+                return;
             }
-            catch (Exception e){
-                Console.WriteLine("Erro: " + e.Message);
-                //todo: tratar erro Programa finaliza ao exibir esta excessao.
-                
-            }
-        }
 
+            Console.Write("Digite a quantidade: ");
+            int quantidade = int.Parse(Console.ReadLine());
+
+            if (item.Item3 + quantidade < 0) {
+                Console.WriteLine("Quantidade nao permitida devido ao estoque atual.");
+                Console.WriteLine($"Estoque atual: {item.Item3}");
+                
+                return;
+            }
+
+            inventario.Remove(item);
+            inventario.Add((item.Item1, item.Item2, item.Item3+quantidade, item.Item4));
+            Console.WriteLine("Estoque atualizado com sucesso.");
+        }
     }
