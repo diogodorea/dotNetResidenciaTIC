@@ -111,6 +111,12 @@ public class Program {
         }
 
         int idadeA = 10, idadeB = 30;
+        if (idadeA > idadeB) {
+            int aux = idadeA;
+            idadeA = idadeB;
+            idadeB = aux;
+        }
+        
         Console.WriteLine($"Digite um estado civil: ");
         string estadoCivil = Console.ReadLine();
         Console.WriteLine($"Digite uma profissão: ");
@@ -138,6 +144,7 @@ public class Program {
             Console.WriteLine($"Cliente: {cliente.Nome} - {cliente.Ecivil}");        
         }
 
+        Console.WriteLine($"Clientes em ordem alfabética:");        
         foreach (var cliente in clienteOrdemAlfabetica) {
             Console.WriteLine($"Cliente: {cliente.Nome}");        
         }
