@@ -158,8 +158,9 @@ class Program
             Console.WriteLine("Relatorios:");
             Console.WriteLine("1. Produtos por estoque minimo");
             Console.WriteLine("2. Produtos entre minimo e maximo quantidade");
-            Console.WriteLine("3. Itens com estoque zerado");
-            Console.WriteLine("4. Voltar");
+            Console.WriteLine("3. Valor total do inventario");
+            Console.WriteLine("4. Valor total por produto");
+            Console.WriteLine("5. Voltar");
             Console.Write("Escolha uma opção: ");
 
             try{
@@ -172,17 +173,23 @@ class Program
                             Console.WriteLine($"{item.Item2} : {item.Item3} : {item.Item4}");
                         }
                         break;
-                    /*
                     case 2:
-                        ItensEstoqueNegativo(inventario);
+                        Console.WriteLine($"Informe o estoque minimo: ");
+                        int estoqueMinimo2 = int.Parse(Console.ReadLine());
+                        Console.WriteLine($"Informe o estoque maximo: ");
+                        int estoqueMaximo = int.Parse(Console.ReadLine());
+                        foreach (var item in inventario.Where(i => i.Item3 >= estoqueMinimo2 && i.Item3 <= estoqueMaximo)) {
+                            Console.WriteLine($"{item.Item2} : {item.Item3} : {item.Item4}");
+                        }
                         break;
                     case 3:
-                        ItensEstoqueZerado(inventario);
+                        Console.WriteLine($"Valor total do inventario: {inventario.Sum(i => i.Item3 * i.Item4)}");
                         break;
                     case 4:
-                        ItensMaisCaros(inventario);
+                        inventario.ForEach(i => Console.WriteLine($"{i.Item2} : {i.Item3 * i.Item4}"));
                         break;
-                        */
+                    case 5:
+                        return;
                 }
             }
             catch (Exception e){
