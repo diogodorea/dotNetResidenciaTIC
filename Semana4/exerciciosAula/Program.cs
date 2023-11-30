@@ -2,6 +2,11 @@
     public string Cor { get; set; }
     public string Modelo { get; set; }
     public int Ano { get; set; }
+    public int IdadeVeiculo {
+        get {
+        return DateTime.Now.Year - Ano;
+        }
+        }
 
     public void toString (){
         Console.WriteLine("Cor: {0}", Cor);
@@ -30,5 +35,6 @@ public class Program {
         carro.toString();
         moto.toString();
         caminhao.toString();
+        carro.IdadeVeiculo();
     }
 }
