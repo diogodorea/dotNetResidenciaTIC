@@ -50,16 +50,18 @@ public class Program {
     public static void Main(string[] args) {
         List<Advogado> advogados = new List<Advogado>();
         List<Cliente> clientes = new List<Cliente>();
-        advogados.Add(new Advogado("João", "123456789", new DateTime(1990, 1, 1)));
-        advogados.Add(new Advogado("Maria", "987654321", new DateTime(1990, 1, 1)));
-        clientes.Add(new Cliente("José", "123456789", new DateTime(1990, 1, 1), "Casado"));
-        clientes.Add(new Cliente("Ana", "987654321", new DateTime(1990, 1, 1), "Solteiro"));
+        advogados.Add(new Advogado("João", "12345678901", new DateTime(1990, 1, 1)));
+        advogados.Add(new Advogado("Maria", "98765432163", new DateTime(1990, 1, 1)));
+        clientes.Add(new Cliente("José", "12345678985", new DateTime(1990, 1, 1), "Casado"));
+        clientes.Add(new Cliente("Ana", "98765432158", new DateTime(1990, 1, 1), "Solteiro"));
         
-        foreach var in advogados {
-            Console.WriteLine(var.Nome);
+        foreach (var advogado in advogados) {
+            Console.WriteLine($"Advogado: {advogado.Nome} - {advogado.Cpf} - {advogado.DataNascimento} - {advogado.CNA}");        
         }
         
-
-        
+        foreach (var cliente in clientes) {     
+            Console.WriteLine($"Cliente: {cliente.Nome} - {cliente.Cpf} - {cliente.DataNascimento} - {cliente.Ecivil}");
+            
+        }
     }
 }
