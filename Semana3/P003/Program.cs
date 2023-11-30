@@ -2,54 +2,6 @@
 
 class Program
     {
-        static void Main(string[] args)
-        {
-            List<(int, string, int, float)> inventario = new ();
-
-            Console.WriteLine("Sistema Gerenciamento Estoque");
-            Console.WriteLine("---------------------------");
-
-            while (true) {
-                Console.WriteLine("1. Visualizar Inventario");
-                Console.WriteLine("2. Adicionar Item");
-                Console.WriteLine("3. Remover Item");
-                Console.WriteLine("4. Consultar Item");
-                Console.WriteLine("5. Atualizar Estoque");
-                Console.WriteLine("6. Sair");
-                Console.Write("Escolha uma opção: ");
-  
-                try{
-                    int escolha = int.Parse(Console.ReadLine());
-                    switch (escolha) {
-                        case 1:
-                            VisualizarInventario(inventario);
-                            break;
-                        case 2:
-                            AdicionarItem(inventario);
-                            break;
-                        case 3:
-                            RemoverItem(inventario);
-                            break;
-                        case 4:
-                            ConsultarItem(inventario);
-                            break;
-                        case 5:
-                            AtualizarEstoque(inventario);
-                            break;
-                        default:
-                            Console.WriteLine("Opção invalida, digite um valor numerico correspondente de 1 a 6.");
-                            break;
-                    }
-                }
-                catch (Exception e){
-                    Console.WriteLine("Erro: " + e.Message);
-                    Console.WriteLine("Opção invalida, digite um valor numerico.");
-                    continue;
-                }
-                 Console.WriteLine();
-            }
-        }
-
         static void VisualizarInventario(List<(int, string, int, float)> inventario) {
             Console.WriteLine("Inventario:");
             Console.WriteLine($"CODIGO: NOME: QUANTIDADE: VALOR");
@@ -84,6 +36,7 @@ class Program
                 Console.WriteLine("Erro: " + e.Message);
             }
         }
+
         static void RemoverItem(List<(int, string, int, float)> inventory) {
             Console.Write("Digite o nome do item: ");
             string itemName = Console.ReadLine();
@@ -135,5 +88,107 @@ class Program
             inventario.Remove(item);
             inventario.Add((item.Item1, item.Item2, item.Item3+quantidade, item.Item4));
             Console.WriteLine("Estoque atualizado com sucesso.");
+        }
+
+        static void ValorTotalInventario(List<(int, string, int, float)> inventario) {
+            float valorTotal = 0;
+            foreach (var item in inventario) {
+                valorTotal += item.Item3 * item.Item4;
+            }
+            Console.WriteLine($"Valor total do inventario: {valorTotal}");
+        }
+
+        static void Main(string[] args)
+        {
+            List<(int, string, int, float)> inventario = new ();
+
+            Console.WriteLine("Sistema Gerenciamento Estoque");
+            Console.WriteLine("---------------------------");
+
+            while (true) {
+                Console.WriteLine("1. Visualizar Inventario");
+                Console.WriteLine("2. Adicionar Item");
+                Console.WriteLine("3. Remover Item");
+                Console.WriteLine("4. Consultar Item");
+                Console.WriteLine("5. Atualizar Estoque");
+                Console.WriteLine("6. Relatorios");
+                Console.WriteLine("7. Sair");
+                Console.Write("Escolha uma opção: ");
+  
+                try{
+                    int escolha = int.Parse(Console.ReadLine());
+                    switch (escolha) {
+                        case 1:
+                            VisualizarInventario(inventario);
+                            break;
+                        case 2:
+                            AdicionarItem(inventario);
+                            break;
+                        case 3:
+                            RemoverItem(inventario);
+                            break;
+                        case 4:
+                            ConsultarItem(inventario);
+                            break;
+                        case 5:
+                            AtualizarEstoque(inventario);
+                            break;
+                        case 6:
+                            Relatorios(inventario);
+                            break;
+                        case 7:
+                            Console.WriteLine("Saindo do sistema...");
+                            return;
+                        default:
+                            Console.WriteLine("Opção invalida, digite um valor numerico correspondente de 1 a 7.");
+                            break;
+                    }
+                }
+                catch (Exception e){
+                    Console.WriteLine("Erro: " + e.Message);
+                    Console.WriteLine("Opção invalida, digite um valor numerico.");
+                    continue;
+                }
+                 Console.WriteLine();
+            }
+        }
+
+
+        public static void Relatorios(List<(int, string, int, float)> inventario) {
+            Console.WriteLine("Relatorios:");
+            Console.WriteLine("1. Produtos por estoque minimo");
+            Console.WriteLine("2. Produtos entre minimo e maximo quantidade");
+            Console.WriteLine("3. Itens com estoque zerado");
+            Console.WriteLine("4. Voltar");
+            Console.Write("Escolha uma opção: ");
+
+            try{
+                int escolha = int.Parse(Console.ReadLine());
+                switch (escolha) {
+                    case 1:
+                        Console.WriteLine($"Informe o estoque minimo: ");
+                        int estoqueMinimo = int.Parse(Console.ReadLine());
+                        foreach (var item in inventario.Where(i => i.Item3 > estoqueMinimo)) {
+                            Console.WriteLine($"{item.Item2} : {item.Item3} : {item.Item4}");
+                        }
+                        
+                        break;
+                    /*
+                    case 2:
+                        ItensEstoqueNegativo(inventario);
+                        break;
+                    case 3:
+                        ItensEstoqueZerado(inventario);
+                        break;
+                    case 4:
+                        ItensMaisCaros(inventario);
+                        break;
+                        */
+                }
+            }
+            catch (Exception e){
+                Console.WriteLine("Erro: " + e.Message);
+                Console.WriteLine("Opção invalida, digite um valor numerico.");
+            }
         }
     }
