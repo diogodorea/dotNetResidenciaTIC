@@ -168,10 +168,9 @@ class Program
                     case 1:
                         Console.WriteLine($"Informe o estoque minimo: ");
                         int estoqueMinimo = int.Parse(Console.ReadLine());
-                        foreach (var item in inventario.Where(i => i.Item3 > estoqueMinimo)) {
+                        foreach (var item in inventario.Where(i => i.Item3 <= estoqueMinimo)) {
                             Console.WriteLine($"{item.Item2} : {item.Item3} : {item.Item4}");
                         }
-                        
                         break;
                     /*
                     case 2:
