@@ -111,14 +111,19 @@ public class Program {
         }
 
         int idadeA = 10, idadeB = 30;
-
+        Console.WriteLine($"Digite um estado civil: ");
+        string estadoCivil = Console.ReadLine();
+        Console.WriteLine($"Digite uma profissão: ");
+        string profissao = Console.ReadLine();
+        
+        
         var advogadoEntreIdades = advogados.Where(a => DateTime.Now.Year - a.DataNascimento.Year >= idadeA && DateTime.Now.Year - a.DataNascimento.Year <= idadeB);
         var clienteEntreIdades = clientes.Where(a => DateTime.Now.Year - a.DataNascimento.Year >= idadeA && DateTime.Now.Year - a.DataNascimento.Year <= idadeB);
-        var clienteEstadocivil = clientes.Where(a => a.Ecivil == "Casado");
+        var clienteEstadocivil = clientes.Where(a => a.Ecivil == estadoCivil);
         var clienteOrdemAlfabetica = clientes.OrderBy(a => a.Nome);
-        var clienteProfissao = clientes.Where(a => a.profissao == "Programador");
-        var aniversariantesCliente = clientes.Where(a => a.DataNascimento.Month == DateTime.Now.Month && a.DataNascimento.Day == DateTime.Now.Day);
-        var anivesariantesAdvogado = advogados.Where(a => a.DataNascimento.Month == DateTime.Now.Month && a.DataNascimento.Day == DateTime.Now.Day);
+        var clienteProfissao = clientes.Where(a => a.profissao == profissao);
+        var aniversariantesCliente = clientes.Where(a => a.DataNascimento.Month == DateTime.Now.Month);
+        var anivesariantesAdvogado = advogados.Where(a => a.DataNascimento.Month == DateTime.Now.Month);
 
         foreach (var advogado in advogadoEntreIdades) {
             Console.WriteLine($"Advogado: {advogado.Nome}");        
@@ -128,6 +133,7 @@ public class Program {
             Console.WriteLine($"Cliente: {cliente.Nome}");        
         }
 
+        Console.WriteLine($"Clientes com estado civil {estadoCivil}:");
         foreach (var cliente in clienteEstadocivil) {
             Console.WriteLine($"Cliente: {cliente.Nome} - {cliente.Ecivil}");        
         }
@@ -136,8 +142,17 @@ public class Program {
             Console.WriteLine($"Cliente: {cliente.Nome}");        
         }
 
+        Console.WriteLine($"Clientes com profissão {profissao}:");
         foreach (var cliente in clienteProfissao) {
             Console.WriteLine($"Cliente: {cliente.Nome} - {cliente.profissao}");        
+        }
+
+        foreach (var cliente in aniversariantesCliente) {
+            Console.WriteLine($"Cliente: {cliente.Nome} - {cliente.DataNascimento}");        
+        }
+
+        foreach (var advogado in anivesariantesAdvogado) {
+            Console.WriteLine($"Advogado: {advogado.Nome} - {advogado.DataNascimento}");        
         }
         
     }
