@@ -1,6 +1,7 @@
 ﻿public abstract class Pessoa
 {
     private string _cpf;
+    private static Dictionary<string, Pessoa> _cpfs = new Dictionary<string, Pessoa>();
 
     public string Nome { get; set; }
 
@@ -11,7 +12,20 @@
         {
             if (value != null && value.Length == 11 && value.Trim().Length == 11)
             {
-                _cpf = value;
+                if (!_cpfs.ContainsKey(value)) 
+                {
+                    if (_cpf != null)
+                    {
+                        _cpfs.Remove(_cpf); 
+                    }
+
+                    _cpfs[value] = this; 
+                    _cpf = value;
+                }
+                else
+                {
+                    throw new ArgumentException("CPF já existe.");
+                }
             }
             else
             {
@@ -30,14 +44,46 @@
     }
 }
 
+public class Advogado : Pessoa
+{
+    private string _cna;
+    private static Dictionary<string, Advogado> _cnaList = new Dictionary<string, Advogado>();
 
-public class Advogado : Pessoa {
-    public string CNA { get; set; }
+    public string CNA
+    {
+        get { return _cna; }
+        set
+        {
+            if (value != null && value.Length > 0)
+            {
+                if (!_cnaList.ContainsKey(value))
+                {
+                    if (_cna != null)
+                    {
+                        _cnaList.Remove(_cna);
+                    }
 
-    public Advogado(string nome, string cpf, DateTime dataNascimento) : base(nome, cpf, dataNascimento) {
-        
+                    _cnaList[value] = this;
+                    _cna = value;
+                }
+                else
+                {
+                    throw new ArgumentException("CNA já existe.");
+                }
+            }
+            else
+            {
+                throw new ArgumentException("CNA deve ser válido.");
+            }
+        }
+    }
+
+    public Advogado(string nome, string cpf, DateTime dataNascimento) : base(nome, cpf, dataNascimento)
+    {
+
     }
 }
+
 
 public class Cliente : Pessoa {
     public string profissao { get; set; }
@@ -51,7 +97,7 @@ public class Program {
         List<Advogado> advogados = new List<Advogado>();
         List<Cliente> clientes = new List<Cliente>();
         advogados.Add(new Advogado("João", "12345678901", new DateTime(1990, 1, 1)));
-        advogados.Add(new Advogado("Maria", "98765432163", new DateTime(1990, 1, 1)));
+        advogados.Add(new Advogado("Maria", "12345978901", new DateTime(1990, 1, 1)));
         clientes.Add(new Cliente("José", "12345678985", new DateTime(1990, 1, 1), "Casado"));
         clientes.Add(new Cliente("Ana", "98765432158", new DateTime(1990, 1, 1), "Solteiro"));
         
